@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Lobster', cursive, 'Noto Serif JP', serif; */
+    font-family: 'Major Mono Display', monospace;
+}
+
+form {
+  padding-top: 10%;
+  width: 30%;
+  margin: 0 auto;
+}
+
+form input {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  outline: 0;
+}
+
+::-webkit-input-placeholder {
+  color: #DDDDDD;
+}
+
+.submit {
+  width: 115px;
+  color: #AAAAAA;
+  background-color: #c3fcf8;
+  margin-left: 40%;
+}
+
+.submit:hover {
+  font-weight: bold;
+  color: #666666;
+}
+
+.msg {
+  padding-top: 0;
+  text-align: center;
+  line-height: 40px;
+}
+
+.msg a {
+  text-decoration: none;
+}

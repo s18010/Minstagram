@@ -1,0 +1,12 @@
+<div id="bg">
+  <form action="/login" method="post">
+    <input type="text" name="lname" placeholder="username" value="<%= session[:user_name]%>">
+    <input type="password" name="lpass" placeholder="password">
+    <input type="submit" value="LOG IN" class="submit">
+  </form>
+  <div class="msg">
+    <p><%= session[:error_msg] %></p>
+    <p>アカウントをお持ちでないですか？</p>
+    <a href="/signup">登録する</a>
+  </div>
+</div>

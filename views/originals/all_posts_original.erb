@@ -1,0 +1,23 @@
+<% @posts.each do |post| %>
+  <a href="/profile/<%= post['user_id'] %>"><p><%= post['name'] %>さん</a>の投稿</p>
+  <img src="/images/<%= post['image_path'] %>" width="300px">
+  <p><%= post['comment'] %></p>
+
+  <%# 編集ボタン%>
+  <% if post['user_id'] == session[:user_id] %>
+    <a href="/post/update/<%= post['post_id'] %>">
+      <button type="submit" name="button"><i class="fas fa-edit"></i></button>
+    </a>
+  <% end %>
+
+
+<%# いいねボタン%>
+  <% if post['user_id'] != session['user_id'] %>
+    <% if @likeFlg == true %>
+      <a href="/dislike/<%= post['post_id'] %>">きらい</a>
+    <% else %>
+      <a href="/like/<%= post['post_id'] %>">すき</a>
+      <p><%= post %></p>
+    <% end %>
+  <% end %>
+<% end %>

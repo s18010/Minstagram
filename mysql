@@ -1,0 +1,49 @@
+# created_atコラムを追加
+alter table add created_at timestamp default current_timestamp not null;
+
+# コラム名変更
+alter table posts change image_url image_path varchar(256) not null;
+
+# usersテーブル作成
+create table users (
+  id int auto_increment primary key,
+  name varchar(20) not null,
+  email varchar(256),
+  password varchar(20) not null,
+  profile varchar(200),
+  profile_photo varchar(20)
+);
+
+# postsテーブル作成
+create table posts (
+  id int auto_increment primary key,
+  user_id int,
+  image_path varchar(256) not null,
+  comment text,
+  created_at timestamp not null default current_timestamp,
+  foreign key(user_id) references users(id)
+);
+
+# followsテーブル作成
+create table follows (
+  id int auto_increment primary key, following_id int, follower_id int,
+  foreign key(following_id) references users(id),
+  foreign key(followed_id) references users(id)
+) ENGINE=InnoDB ;
+
+# LIKESテーブル作成
+create table likes (
+ id int auto_increment primary key, user_id int, post_id int,
+ foreign key(user_id) references users(id),
+ foreign key(post_id) references posts(id)
+);
+
+# フォローしてる人の投稿だけ表示
+select * from posts p
+left outer join follows f
+on p.user_id = f.following_id
+left outer join users u
+on p.user_id = u.id
+where p.user_id in (
+  select follower_id from follows where following_id = ?
+);

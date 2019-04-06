@@ -1,0 +1,16 @@
+<h1>Edit Profile</h1>
+<form action="/edit_profile" method="post" enctype="multipart/form-data">
+
+    <label>
+      Bio
+      <input type="text" name="new_profile" value="<%= @myinfo['profile'] %>">
+    </label>
+
+    <label>
+      <img src="/images/profile/<%= @myinfo['profile_photo'] ||= 'default_icon.jpg' %>" alt="profile_icon" width="100px">
+      <input type="file" name="new_profile_img">
+    </label><br>
+
+    <input type="submit" value="Save">
+
+</form>

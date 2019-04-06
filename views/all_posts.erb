@@ -1,0 +1,22 @@
+<section class="contents">
+<% @posts.each do |post| %>
+<div class="content">
+  <div class="content_main">
+    <img class="content_img" src="/images/<%= post['image_path'] %>">
+    <% if post['user_id'] == session[:user_id] %>
+      <p class="content_title">your post
+        <span>
+          <%= post['comment'] %>
+        </span>
+      </p>
+    <% else %>
+      <a href="/profile/<%= post['user_id'] %>"><p class="content_title"><%= post['name'] %></a>
+      <span>
+        <%= post['comment'] %>
+      </span>
+    <% end %>
+    </p>
+  </div>
+</div>
+<% end %>
+</section>

@@ -1,0 +1,15 @@
+<div class="follows">
+  <h1>Followers</h1>
+  <% if @res.size < 1 %>
+    <p>No followers</p>
+  <% else %>
+  <div class="follow">
+    <% @res.each do |item| %>
+      <a href="/profile/<%= item['id'] %>">
+      <p><%= item['name'] %></p>
+      <img src="/images/profile/<%= item['profile_photo'] ||= 'default_icon.jpg' %>" alt="profile_photo">
+      </a>
+    <% end %>
+  </div>
+  <% end %>
+</div>

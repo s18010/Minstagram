@@ -1,0 +1,41 @@
+
+
+<!-- プロフィール -->
+<div class="profile">
+  <h1>About Me</h1>
+  <img src="/images/profile/<%= @user['profile_photo'] ||= 'default_icon.jpg' %>" alt="profile_icon">
+  <p class="username"><%= @user['name'] %></p>
+  <%  if @user['id'] != session[:user_id] %>
+    <% if @followFlg == true  %>
+      <a href="/unfollow/<%= @user['id'] %>">Follwing</a>
+    <% else %>
+      <a href="/follow/<%= @user['id'] %>">Follow</a>
+    <% end %>
+  <% end %>
+
+  <p class="bio"><%= @user['profile'] %></p>
+
+  <% if @user['id'] == session[:user_id] %>
+    <a href="/edit_profile">
+      <button type="submit" name="button">Edit Profile</button>
+    </a>
+  <% end %>
+</div>
+
+  <!-- 自分の投稿 -->
+  <div class="posts">
+    <% if @posts.to_a.size == 0 %>
+      <p>No Posts Yet</p>
+    <% else %>
+      <% @posts.each do |post| %>
+        <div class="post">
+          <img src="/images/<%= post['image_path'] %>" alt="自分の投稿画像" width="500px">
+          <p><%= post['comment'] %></p>
+          <%# 編集ボタン%>
+              <a href="/post/update/<%= post['id'] %>">
+                <button type="submit" name="button"><i class="fas fa-edit"></i></button>
+              </a>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster', cursive, 'Noto Serif JP', serif;
+    /* font-family: 'Major Mono Display', monospace; */
+}
+
+.header-img {
+    width: 100%;
+}
+
+header h1 {
+  background-color: #fff;
+  color: #4e4c4f;
+  font-size: 100px;
+  margin: 0 auto 20px 100px;
+  font-family: 'Lobster', cursive;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.right-social-menu {
+    list-style: none;
+    display: flex;
+    float: right;
+}
+
+header .right-social-menu {
+    margin: 30px 50px 0 0;
+    }
+
+.menu {
+  background-color: #fedccd;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /*
+  position: absolute;
+  */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+
+.menu li {
+  font-size: 25px;
+  list-style: none;
+  margin-left: 50px;
+}
+
+.menu li a {
+    color: #5c5260;
+    text-decoration: none;
+    }
+
+.menu li:last-child {
+    margin-left: auto;
+    margin-right: 30px;
+    color: #5c5260;
+}
+
+.menu li:hover {
+    font-weight: bold;
+}
+
+.featured img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.featured_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0.8;
+}
+
+
+/*featured imageを一定時間ごとに切り替え*/
+#photo {
+    width: 100%;
+    height: 480px;
+    margin: 0 auto 15px auto;
+    /*
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    */
+}
+#photo img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+main {
+  width: 100%;
+}
+
+.contents {
+  display: flex; /*横並び*/
+  flex-wrap: wrap; /*子要素が親要素の幅を超えると改行*/
+}
+
+.content {
+  width: calc(100% / 3);
+}
+
+.content_img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /*縦横比を変えない*/
+}
+
+.content_main {
+  position: relative;
+  width: 96%;
+  margin-bottom: 10px;
+  margin-left: 2%;
+}
+
+.content_main:hover .content_title {
+  /* padding: 10px 0; */
+  height: 100%;
+  transition: 0.6s;
+}
+
+.content_title {
+  position: absolute;
+  width: 100%;
+  /* padding: 10px 0; */
+  /* height: 10%; */
+  height: 100%;
+  bottom: -15px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  word-wrap: break-word;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.content_title:hover {
+  opacity: 1;
+}
+
+.content_title span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+}
+
+.content_main:hover .content_title span {
+    display: block;
+    font-size: 25px;
+    padding: 20px;
+    animation: sample 1s ease 0s alternate;
+}
+
+@keyframes sample {
+    0% {opacity: 0;}
+    100% {
+      opacity: 1;
+    }
+}
+
+.content_main a {
+  color: #000;
+}
+
+.content_main a:hover {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+footer .container {
+    margin: 10px 100px;
+    height: 200px;
+}
+
+.left-page-menu {
+    list-style: none;
+    display: flex;
+    float: left;
+    height: 100px;
+    }
+
+/* .left-page-menu li a {
+    padding: 20px;
+    font-size: 25px;
+    color: #5c5260;
+    font-family: 'Major Mono Display', monospace;
+    text-decoration: none;
+} */
+
+/* .left-page-menu li:hover {
+    font-weight: bold;
+} */
+
+.facolor {
+    color: #5c5260;
+    padding: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.facolor:hover {
+    background-color: #c4faf7;
+    border-radius: 50%;
+    transition-duration: 0.5s;
+}
+
+.copy {
+  margin-top: 50px;
+}
+
+.copy p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #5c5260;
+    text-align: center;
+}
+
+/* プロフィール画面用 */
+.profile {
+  text-align: center;
+  width: 50%;
+  margin: auto auto 50px auto;
+}
+
+.profile h1{
+  font-size: 70px;
+}
+
+.profile img {
+  width: 300px;
+}
+
+.profile button {
+  font-size: 30px;
+  color: #808080;
+  background-color: #fedccd;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.profile button:hover {
+  color: #fedccd;
+  background-color: #808080;
+}
+
+.profile a {
+  font-size: 30px;
+}
+
+.profile a:hover {
+  text-decoration: none;
+}
+
+.username {
+  font-size: 50px;
+}
+
+.bio {
+  font-size: 30px;
+  color: #808080;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin: 50px;
+}
+
+.follows {
+  text-align: center;
+  width: 80%;
+  margin: auto auto 50px auto;
+}
+
+.follows h1 {
+  font-size: 70px;
+  margin-bottom: 50px;
+}
+
+.follows a {
+  color: #808080;
+  border: solid 1px #dbdbdb;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.follows a:hover {
+  color: #000;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.follow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.follow img {
+  width: 200px;
+  margin: 30px;
+}
+
+.follow p {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.newpost {
+  text-align: center;
+}
+
+.newpost h1 {
+  font-size: 70px;
+  margin-bottom: 50px;
+}
+
+.newpost form {
+  margin: auto auto 70px auto;
+}
+
+#comment {
+  width: 300px;
+  height: 200px;
+}
+
+#submit {
+  font-size: 30px;
+  color: #808080;
+  background-color: #fedccd;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#submit:hover {
+  color: #fedccd;
+  background-color: #808080;
+}

@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+  <a href="/profile/<%= post['user_id'] %>"><p><%= post['name'] %>さん</a>の投稿</p>
+  <img src="/images/<%= post['image_path'] %>" width="300px">
+  <p><%= post['comment'] %></p>
+<% end %>

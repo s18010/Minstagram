@@ -1,0 +1,9 @@
+<h1>Edit Post</h1>
+<form action="/post/update" method="post">
+  <input type="hidden" name="id" value="<%= @results['id'] %>">
+  <img src="/images/<%= @results['image_path'] %>" width="300px">
+  <input type="text" name="comment" id="comment" placeholder="Comment" value="<%= @results['comment'] %>">
+
+      <input type="submit" value="Save" id="submit">
+      <a href="/post/delete/<%= @results['id']%>">Delete</a>
+</form>
